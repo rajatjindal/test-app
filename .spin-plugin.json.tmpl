@@ -1,0 +1,35 @@
+{
+  "name": "test-app",
+  "description": "A plugin to manage spin apps",
+  "homepage": "https://github.com/rajatjindal/test-app",
+  "version": "{{ Version }}",
+  "spinCompatibility": ">=1.5",
+  "license": "Apache-2.0",
+  "packages": [
+    {
+      "os": "linux",
+      "arch": "amd64",
+      {{#addURLAndSha}}https://github.com/rajatjindal/test-app/releases/download/{{ TagName }}/test-app-{{ TagName }}-linux-amd64.tar.gz{{/addURLAndSha}}
+    },
+    {
+      "os": "linux",
+      "arch": "aarch64",
+      {{#addURLAndSha}}https://github.com/rajatjindal/test-app/releases/download/{{ TagName }}/test-app-{{ TagName }}-linux-aarch64.tar.gz{{/addURLAndSha}}
+    },
+    {
+      "os": "macos",
+      "arch": "aarch64",
+      {{#addURLAndSha}}https://github.com/rajatjindal/test-app/releases/download/{{ TagName }}/test-app-{{ TagName }}-macos-aarch64.tar.gz{{/addURLAndSha}}
+    },
+    {
+      "os": "macos",
+      "arch": "amd64",
+      {{#addURLAndSha}}https://github.com/rajatjindal/test-app/releases/download/{{ TagName }}/test-app-{{ TagName }}-macos-amd64.tar.gz{{/addURLAndSha}}
+    },
+    {
+      "os": "windows",
+      "arch": "amd64",
+      {{#addURLAndSha}}https://github.com/rajatjindal/test-app/releases/download/{{ TagName }}/test-app-{{ TagName }}-windows-amd64.tar.gz{{/addURLAndSha}}
+    }
+  ]
+}
