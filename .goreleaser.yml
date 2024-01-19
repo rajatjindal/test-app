@@ -15,18 +15,11 @@ builds:
   - arm64
 
 snapshot:
-  # Allows you to change the name of the generated snapshot
-  #
-  # Note that some pipes require this to be semantic version compliant (nfpm,
-  # for example).
-  #
-  # Default is `{{ .Version }}-SNAPSHOT-{{.ShortCommit}}`.
-  # Templates: allowed
-  name_template: "{{ .ProjectName }}-canary-{{ .Os }}-{{ .Arch }}{{ if .Arm }}v{{ .Arm }}{{ end }}"
+  name_template: "canary"
 archives:
 - builds:
   - test-app
-  name_template: "{{ .ProjectName }}-{{ .Tag }}-{{ .Os }}-{{ .Arch }}{{ if .Arm }}v{{ .Arm }}{{ end }}"
+  name_template: "{{ .ProjectName }}-{{ .Version }}-{{ .Os }}-{{ .Arch }}{{ if .Arm }}v{{ .Arm }}{{ end }}"
   wrap_in_directory: false
   format: tar.gz
   files:
