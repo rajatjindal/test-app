@@ -1,0 +1,24 @@
+builds:
+- id: test-app
+  main: ./
+  binary: test-app
+  env:
+  - CGO_ENABLED=0
+  ldflags:
+  - "-s -w"
+  goos:
+  - darwin
+  - linux
+  - windows
+  goarch:
+  - amd64
+  - arm64
+
+archives:
+- builds:
+  - test-app
+  name_template: "{{ .ProjectName }}_{{ .Tag }}_{{ .Os }}_{{ .Arch }}{{ if .Arm }}v{{ .Arm }}{{ end }}"
+  wrap_in_directory: false
+  format: tar.gz
+  files:
+  - LICENSE
