@@ -37,7 +37,7 @@ jobs:
       if: github.ref == 'refs/heads/main'
       run: |
         gh release delete canary --cleanup-tag || true
-        gh release create canary dist/* \
+        gh release create canary dist/test-app*.tar.gz \
           --title canary \
           --prerelease \
           --notes-file - <<- EOF
