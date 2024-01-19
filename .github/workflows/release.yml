@@ -48,7 +48,7 @@ jobs:
         GH_TOKEN: ${{ github.token }}
 
     - name: "release plugin"
-      uses: rajatjindal/spin-plugin-releaser@v1
+      uses: rajatjindal/spin-plugin-releaser@versions
       if: github.ref == 'refs/heads/main'
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
