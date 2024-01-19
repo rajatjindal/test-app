@@ -46,3 +46,11 @@ jobs:
         EOF
       env:
         GH_TOKEN: ${{ github.token }}
+
+    - name: "release plugin"
+      uses: rajatjindal/spin-plugin-releaser@v1
+      if: github.ref == 'refs/heads/main'
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        upload_checksums: true
+        template_file: .spin-plugin.json.tmpl
